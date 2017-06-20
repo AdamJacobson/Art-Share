@@ -17,6 +17,8 @@ ryan = User.create(username:'ryan')
 
 lady = Artwork.create(image_url: "http://i.imgur.com/CchNQmg.jpg",
   title: "lady", artist_id: adam.id)
+tree = Artwork.create(image_url: "http://i.imgur.com/CchNQmg.jpg",
+  title: "tree", artist_id: adam.id)
 thread = Artwork.create(image_url: "http://i.imgur.com/nx0N6Xx.jpg",
   title: "thread", artist_id: hiro.id)
 

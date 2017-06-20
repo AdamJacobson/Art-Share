@@ -1,12 +1,17 @@
 class ArtworksController < ApplicationController
 
   def index
-    artwork = Artwork.all
-    render json: artwork
+    user = User.find_by(id: params[:user_id])
+
+    user_artworks = user.artworks
+    shared_artworks = user.shared_artworks
+
+    all_art = [user_artworks].concat(shared_artworks)
+    render json: all_art
   end
 
   def create
-    artwork = Artwork.new(artwork_params)
+    artwork = Artwork.ne(artwork_params)
     if artwork.save
       render json: artwork
     else
