@@ -31,7 +31,7 @@ class UsersController < ApplicationController
       user.update(user_params)
       render json: current_user
     else
-      render json: ["Cannot find user"]
+      render json: user.errors.full_messages, status: 422
     end
   end
 
@@ -55,7 +55,5 @@ class UsersController < ApplicationController
   def user_params
     params[:user].permit(:username)
   end
-
-
 
 end
