@@ -2,7 +2,7 @@ class ArtworkShare < ApplicationRecord
 
   validates :artwork_id, :viewer_id, presence: true
   validates :artwork_id, uniqueness: { scope: :viewer_id,
-    message: 'cannot share more than once' }
+    message: 'cannot be shared more than once' }
 
   belongs_to :artwork,
     primary_key: :id,
